@@ -13,7 +13,7 @@ The script recursively goes through the root directory to find all the files and
 Usage: python folderMod.py [options] arg_name
   options:
     -p, --path required  absolute path to the folder
-    -m, --mode           operation mode : keep/remove
+    -m, --mode           operation mode : keep/remove (defaut is keep)
     -x, --ext  required  list of extensions
     
   sample:
