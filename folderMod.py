@@ -1,5 +1,8 @@
 import os
 import argparse
+import sys
+
+version = sys.version_info[0]
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--path", required=True, help="path to directory to clean up")
@@ -26,5 +29,8 @@ for (folder, directory, fileNames) in os.walk(path):
                 deleteFiles.append(os.path.join(folder, fileName).replace(" ", "\\ "))
 
 for item in deleteFiles:
-    print "[INFO] deleting file {}".format(item)
+    if version<3:
+        print "[INFO] deleting file {}".format(item)
+    else:
+        print("[INFO] deleting file {}".format(item))
     os.remove(item)
