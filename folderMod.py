@@ -1,3 +1,4 @@
+from __future__ import print_function
 import os
 import argparse
 import sys
@@ -29,8 +30,5 @@ for (folder, directory, fileNames) in os.walk(path):
                 deleteFiles.append(os.path.join(folder, fileName).replace(" ", "\\ "))
 
 for item in deleteFiles:
-    if version<3:
-        print "[INFO] deleting file {}".format(item)
-    else:
-        print("[INFO] deleting file {}".format(item))
+    print("[INFO] deleting file {}".format(item))
     os.remove(item)
